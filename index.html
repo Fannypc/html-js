@@ -10,6 +10,20 @@
 </head>
 <body>
     <div class="container mt-5">
+        <div class="row justify-content-end">
+            <div class="col-6">
+                <form action="/create.html" onsubmit="event.preventDefault(), filterByMXCode()">
+                    <div>
+                        <label for="exampleInputEmail1" class="form-label">Brand</label>
+                      </div>
+                    <div class="d-flex">
+                      <input id="brand" type="text" class="form-control me-3" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
         <div class="row" id="cars-container">
         </div>
     </div>

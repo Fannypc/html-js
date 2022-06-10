@@ -22,7 +22,7 @@ function generateCardCars(carsArray) {
     container.innerHTML = html;
 }
 
-function filterByMXCode(element) {
+function cbByMXCode(element) {
     return element.code.endsWith('MX');
 }
 
@@ -34,6 +34,17 @@ function findByMXCode(element) {
     return element.code.endsWith('MX');
 }
 
-let carByMXCode = find(cars, findByMXCode);
-generateCardCars([carByMXCode]);
+function cbFilterByBrand(element) {
+    const input = document.getElementById('brand');
+    console.log(input.value);
+    return element.brand === input.value;
+}
 
+
+function filterByMXCode() {
+    let carByName = filter(cars, cbFilterByBrand);
+    generateCardCars(carByName);
+}
+
+
+window.filterByMXCode = filterByMXCode;
