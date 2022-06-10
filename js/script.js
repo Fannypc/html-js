@@ -21,6 +21,7 @@ function generateCardCars(carsArray) {
     const container = document.getElementById('cars-container');
     container.innerHTML = html;
 }
+generateCardCars(cars);
 
 function cbByMXCode(element) {
     return element.code.endsWith('MX');
@@ -35,9 +36,11 @@ function findByMXCode(element) {
 }
 
 function cbFilterByBrand(element) {
-    const input = document.getElementById('brand');
-    console.log(input.value);
-    return element.brand === input.value;
+    const input = document.getElementById('brand-filter');
+    // let brand = element.brand.toLowerCase();
+    // let value = input.value.toLowerCase();
+    // return brand.includes(value);
+    return element.brand.toLowerCase().includes(input.value.toLowerCase());
 }
 
 
@@ -46,5 +49,26 @@ function filterByMXCode() {
     generateCardCars(carByName);
 }
 
+function createNewCar() {
+    const brand = document.getElementById('brand').value;
+    const code = document.getElementById('code').value;
+    const year = document.getElementById('year').value;
+    const model = document.getElementById('model').value;
+    const shop = document.getElementById('shop').value;
+
+    const newCar = {
+        brand: brand,
+        code: code,
+        year: year,
+        model: model,
+        shop: shop
+    }
+
+    cars.push(newCar);
+    console.log(cars);
+    generateCardCars(cars);
+}
+
 
 window.filterByMXCode = filterByMXCode;
+window.createNewCar = createNewCar;

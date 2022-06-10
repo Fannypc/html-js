@@ -11,23 +11,66 @@
 <body>
     <div class="container mt-5">
         <div class="row justify-content-end">
+            <div class="col-6 d-flex align-items-end">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Launch demo modal
+                </button>
+            </div>
             <div class="col-6">
                 <form action="/create.html" onsubmit="event.preventDefault(), filterByMXCode()">
                     <div>
                         <label for="exampleInputEmail1" class="form-label">Brand</label>
                       </div>
                     <div class="d-flex">
-                      <input id="brand" type="text" class="form-control me-3" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <input id="brand-filter" type="text" class="form-control me-3" id="exampleInputEmail1" aria-describedby="emailHelp">
                       <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
             </div>
         </div>
+
         
-        <div class="row" id="cars-container">
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form onsubmit="event.preventDefault(), createNewCar()">
+                        <div class="mb-3">
+                          <label for="brand" class="form-label">Brand</label>
+                          <input type="text" class="form-control" id="brand">
+                        </div>
+                        <div class="mb-3">
+                            <label for="code" class="form-label">Code</label>
+                            <input type="text" class="form-control" id="code">
+                        </div>
+                        <div class="mb-3">
+                            <label for="year" class="form-label">Year</label>
+                            <input type="text" class="form-control" id="year">
+                        </div>
+                        <div class="mb-3">
+                            <label for="model" class="form-label">Model</label>
+                            <input type="text" class="form-control" id="model">
+                        </div>
+                        <div class="mb-3">
+                            <label for="shop" class="form-label">Shop</label>
+                            <input type="text" class="form-control" id="shop">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                </div>
+            </div>
+            </div>
+        </div>
+  
+        
+        <div class="row mt-5" id="cars-container">
         </div>
     </div>
 
     <script src="./js/script.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
